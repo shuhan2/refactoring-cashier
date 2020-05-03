@@ -11,28 +11,28 @@ public class LineItem {
         this.quantity = quantity;
     }
 
-	double totalAmount() {
-        return price * quantity;
-    }
-
 	double calculateSalesTax() {
-		return totalAmount() * .10;
+		return calculateTotalAmount() * .10;
 	}
 
 	double calculateTotalAmountWithTax() {
-		return totalAmount() + calculateSalesTax();
+		return calculateTotalAmount() + calculateSalesTax();
 	}
 
-	public String state() {
+	private double calculateTotalAmount() {
+		return price * quantity;
+	}
+
+	String getState() {
 		StringBuilder result = new StringBuilder();
-		result.append(description);
-		result.append('\t');
-		result.append(price);
-		result.append('\t');
-		result.append(quantity);
-		result.append('\t');
-		result.append(totalAmount());
-		result.append('\n');
+		result.append(description)
+				.append('\t')
+				.append(price)
+				.append('\t')
+				.append(quantity)
+				.append('\t')
+				.append(calculateTotalAmount())
+				.append('\n');
 		return result.toString();
 	}
 }

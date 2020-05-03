@@ -18,7 +18,7 @@ public class OrderReceipt {
 
         output.append(stateHeaders());
 
-        output.append(order.state());
+        output.append(order.getState());
 
         return output.toString();
     }
