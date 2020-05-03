@@ -25,15 +25,15 @@ public class LineItem {
     return result.toString();
   }
 
-  private double calculateTotalAmount() {
-    return price * quantity;
-  }
-
   double calculateTotalAmountWithTax() {
     return calculateTotalAmount() + calculateSalesTax();
   }
 
   double calculateSalesTax() {
     return calculateTotalAmount() * .10;
+  }
+
+  private double calculateTotalAmount() {
+    return price * quantity;
   }
 }
