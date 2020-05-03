@@ -1,19 +1,23 @@
 package cn.xpbootcamp.refactor;
 
 public class Customer {
-    String customerName;
-    String customerAddress;
+    String name;
+    String address;
 
-    public Customer(String customerName, String customerAddress) {
-        this.customerName = customerName;
-        this.customerAddress = customerAddress;
+    public Customer(String name, String address) {
+        this.name = name;
+        this.address = address;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public String getName() {
+        return name;
     }
 
-    public String getCustomerAddress() {
-        return customerAddress;
+    public String getAddress() {
+        return address;
+    }
+
+    String state() {
+      return getName() + getAddress();
     }
 }

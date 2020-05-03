@@ -14,13 +14,8 @@ public class OrderReceipt {
     }
 
     public String printReceipt() {
-        StringBuilder output = new StringBuilder();
 
-        output.append(stateHeaders());
-
-        output.append(order.getState());
-
-        return output.toString();
+        return stateHeaders() + order.getState();
     }
 
     private String stateHeaders() {
